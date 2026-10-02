@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+.env
+.env.*
+
+# OS and editors
+.DS_Store
+.ipynb_checkpoints/
+
+# Training artifacts
+runs/
+exported_models/
+*.safetensors
+*.pt
+*.log
+wandb/
