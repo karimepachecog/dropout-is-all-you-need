@@ -1,0 +1,50 @@
+{
+  "run_name": "unsupervised_s42_bs64_lr3e-05_tau0.05_frac0.25_samedrop0_hardneg0",
+  "mode": "unsupervised",
+  "model_name": "bert-base-uncased",
+  "seed": 42,
+  "batch_size": 64,
+  "lr": 3e-05,
+  "tau": 0.05,
+  "epochs": 1,
+  "max_len": 32,
+  "eval_max_len": 128,
+  "dropout": 0.1,
+  "weight_decay": 0.0,
+  "warmup_ratio": 0.0,
+  "same_dropout": false,
+  "hard_negatives": false,
+  "data_fraction": 0.25,
+  "n_examples": 41382,
+  "steps_per_epoch": 646,
+  "total_steps": 646,
+  "pooling_train": "cls",
+  "pooling_eval": "cls_before_pooler",
+  "hardware": "cuda:Tesla T4 (14.6 GB)",
+  "device": "cuda",
+  "torch_version": "2.11.0+cu130",
+  "fp16": true,
+  "autocast": true,
+  "max_steps": null,
+  "best_dev_spearman": 74.88748494823285,
+  "best_step": 500,
+  "elapsed_sec": 159.31724286079407,
+  "history": [
+    {
+      "step": 250,
+      "loss": 0.015829291194677353,
+      "dev_spearman": 73.93610732627668
+    },
+    {
+      "step": 500,
+      "loss": 0.009781911969184875,
+      "dev_spearman": 74.88748494823285
+    },
+    {
+      "step": 646,
+      "loss": 0.03887449949979782,
+      "dev_spearman": 74.85702311898108
+    }
+  ],
+  "test_spearman": null
+}

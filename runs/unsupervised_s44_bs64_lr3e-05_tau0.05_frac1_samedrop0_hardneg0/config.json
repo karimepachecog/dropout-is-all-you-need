@@ -1,0 +1,90 @@
+{
+  "run_name": "unsupervised_s44_bs64_lr3e-05_tau0.05_frac1_samedrop0_hardneg0",
+  "mode": "unsupervised",
+  "model_name": "bert-base-uncased",
+  "seed": 44,
+  "batch_size": 64,
+  "lr": 3e-05,
+  "tau": 0.05,
+  "epochs": 1,
+  "max_len": 32,
+  "eval_max_len": 128,
+  "dropout": 0.1,
+  "weight_decay": 0.0,
+  "warmup_ratio": 0.0,
+  "same_dropout": false,
+  "hard_negatives": false,
+  "data_fraction": 1.0,
+  "n_examples": 165529,
+  "steps_per_epoch": 2586,
+  "total_steps": 2586,
+  "pooling_train": "cls",
+  "pooling_eval": "cls_before_pooler",
+  "hardware": "cuda:Tesla T4 (14.6 GB)",
+  "device": "cuda",
+  "torch_version": "2.11.0+cu130",
+  "fp16": true,
+  "autocast": true,
+  "max_steps": null,
+  "best_dev_spearman": 76.0387904556281,
+  "best_step": 2000,
+  "elapsed_sec": 625.4380059242249,
+  "history": [
+    {
+      "step": 250,
+      "loss": 0.022573646157979965,
+      "dev_spearman": 73.40162145288545
+    },
+    {
+      "step": 500,
+      "loss": 0.008602283895015717,
+      "dev_spearman": 74.70287676822306
+    },
+    {
+      "step": 750,
+      "loss": 0.013889770954847336,
+      "dev_spearman": 75.0515901039698
+    },
+    {
+      "step": 1000,
+      "loss": 0.015366338193416595,
+      "dev_spearman": 75.54487871126841
+    },
+    {
+      "step": 1250,
+      "loss": 0.003221740946173668,
+      "dev_spearman": 75.83027121475737
+    },
+    {
+      "step": 1500,
+      "loss": 0.012857809662818909,
+      "dev_spearman": 75.69573410830132
+    },
+    {
+      "step": 1750,
+      "loss": 0.0034235771745443344,
+      "dev_spearman": 76.03692780606907
+    },
+    {
+      "step": 2000,
+      "loss": 0.0034063346683979034,
+      "dev_spearman": 76.0387904556281
+    },
+    {
+      "step": 2250,
+      "loss": 0.003440307453274727,
+      "dev_spearman": 76.02393979340073
+    },
+    {
+      "step": 2500,
+      "loss": 0.0015911050140857697,
+      "dev_spearman": 75.92652062357652
+    },
+    {
+      "step": 2586,
+      "loss": 0.0046912506222724915,
+      "dev_spearman": 75.94604399158244
+    }
+  ],
+  "test_spearman": null
+}

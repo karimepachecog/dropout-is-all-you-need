@@ -1,0 +1,92 @@
+{
+  "run_name": "unsupervised_s42_bs64_lr3e-05_tau0.05_frac1_samedrop1_hardneg0",
+  "mode": "unsupervised",
+  "model_name": "bert-base-uncased",
+  "seed": 42,
+  "batch_size": 64,
+  "lr": 3e-05,
+  "tau": 0.05,
+  "epochs": 1,
+  "max_len": 32,
+  "eval_max_len": 128,
+  "dropout": 0.1,
+  "weight_decay": 0.0,
+  "warmup_ratio": 0.0,
+  "same_dropout": true,
+  "hard_negatives": false,
+  "data_fraction": 1.0,
+  "n_examples": 165529,
+  "steps_per_epoch": 2586,
+  "total_steps": 2586,
+  "pooling_train": "cls",
+  "pooling_eval": "cls_before_pooler",
+  "hardware": "cuda:Tesla T4 (14.6 GB)",
+  "device": "cuda",
+  "torch_version": "2.11.0+cu130",
+  "fp16": true,
+  "autocast": true,
+  "max_steps": null,
+  "best_dev_spearman": 65.48887484911334,
+  "best_step": 2000,
+  "elapsed_sec": 435.353492975235,
+  "history": [
+    {
+      "step": 250,
+      "loss": 0.0017663948237895966,
+      "dev_spearman": 59.769577705257404
+    },
+    {
+      "step": 500,
+      "loss": 0.000344177708029747,
+      "dev_spearman": 61.65565077644265
+    },
+    {
+      "step": 750,
+      "loss": 0.0008006468415260315,
+      "dev_spearman": 63.12649748120064
+    },
+    {
+      "step": 1000,
+      "loss": 0.0003161448985338211,
+      "dev_spearman": 63.83403811915718
+    },
+    {
+      "step": 1250,
+      "loss": 0.00018357671797275543,
+      "dev_spearman": 64.53781537937458
+    },
+    {
+      "step": 1500,
+      "loss": 0.00027633272111415863,
+      "dev_spearman": 64.72982451306305
+    },
+    {
+      "step": 1750,
+      "loss": 0.000205138698220253,
+      "dev_spearman": 64.98055853179304
+    },
+    {
+      "step": 2000,
+      "loss": 0.00010224804282188416,
+      "dev_spearman": 65.48887484911334
+    },
+    {
+      "step": 2250,
+      "loss": 0.0002324189990758896,
+      "dev_spearman": 65.43435391501583
+    },
+    {
+      "step": 2500,
+      "loss": 0.00014572776854038239,
+      "dev_spearman": 65.48142030548965
+    },
+    {
+      "step": 2586,
+      "loss": 0.000341193750500679,
+      "dev_spearman": 65.48326537000099
+    }
+  ],
+  "test_spearman": 56.271895643025694,
+  "test_alignment": 0.431884229183197,
+  "test_uniformity": -2.8579258918762207
+}

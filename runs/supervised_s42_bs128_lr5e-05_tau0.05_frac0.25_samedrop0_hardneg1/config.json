@@ -1,0 +1,40 @@
+{
+  "run_name": "supervised_s42_bs128_lr5e-05_tau0.05_frac0.25_samedrop0_hardneg1",
+  "mode": "supervised",
+  "model_name": "bert-base-uncased",
+  "seed": 42,
+  "batch_size": 128,
+  "lr": 5e-05,
+  "tau": 0.05,
+  "epochs": 3,
+  "max_len": 32,
+  "eval_max_len": 128,
+  "dropout": 0.1,
+  "weight_decay": 0.0,
+  "warmup_ratio": 0.0,
+  "same_dropout": false,
+  "hard_negatives": true,
+  "data_fraction": 0.25,
+  "n_examples": 8337,
+  "steps_per_epoch": 65,
+  "total_steps": 195,
+  "pooling_train": "cls",
+  "pooling_eval": "cls",
+  "hardware": "cuda:Tesla T4 (14.6 GB)",
+  "device": "cuda",
+  "torch_version": "2.11.0+cu130",
+  "fp16": true,
+  "autocast": true,
+  "max_steps": null,
+  "best_dev_spearman": 73.56718207197723,
+  "best_step": 195,
+  "elapsed_sec": 101.32018399238586,
+  "history": [
+    {
+      "step": 195,
+      "loss": 1.4446905851364136,
+      "dev_spearman": 73.56718207197723
+    }
+  ],
+  "test_spearman": null
+}
