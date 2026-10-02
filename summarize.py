@@ -31,10 +31,19 @@ def as_float(value: str) -> float | None:
     return float(value)
 
 
+def is_default_lr(row: dict) -> bool:
+    """Seed noise is the three runs at the mode's default rate, not the learning-rate sweep."""
+    lr = float(row["lr"])
+    if row["mode"] == "unsupervised":
+        return abs(lr - 3e-5) < 1e-12
+    return abs(lr - 5e-5) < 1e-12
+
+
 def is_main(row: dict) -> bool:
     return (
         row["same_dropout"] in {"False", "false", "0"}
         and float(row["data_fraction"]) == 1.0
+        and is_default_lr(row)
         and (
             (row["mode"] == "unsupervised")
             or (row["mode"] == "supervised" and row["hard_negatives"] in {"True", "true", "1"})

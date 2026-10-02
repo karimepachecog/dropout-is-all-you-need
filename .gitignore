@@ -23,6 +23,10 @@ runs/*
 !runs/reference_eval.json
 !runs/analysis/
 !runs/analysis/**
+!runs/supervised_s42_bs128_lr1e-05_tau0.05_frac1_samedrop0_hardneg1/
+!runs/supervised_s42_bs128_lr1e-05_tau0.05_frac1_samedrop0_hardneg1/config.json
+!runs/supervised_s42_bs128_lr3e-05_tau0.05_frac1_samedrop0_hardneg1/
+!runs/supervised_s42_bs128_lr3e-05_tau0.05_frac1_samedrop0_hardneg1/config.json
 exported_models/
 *.safetensors
 *.pt
