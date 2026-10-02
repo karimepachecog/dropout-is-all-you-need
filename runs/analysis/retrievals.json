@@ -1,0 +1,293 @@
+{
+  "split": "test",
+  "models": {
+    "BERT mean": {
+      "metrics": {
+        "spearman": 47.28960843650795,
+        "alignment": 0.21554061770439148,
+        "uniformity": -1.614965558052063,
+        "n_pairs": 1379,
+        "n_positive_pairs": 338,
+        "n_uniformity_sentences": 2552
+      },
+      "neighbors": {
+        "A girl is styling her hair.": [
+          {
+            "sentence": "A girl is brushing her hair.",
+            "cosine": 0.9766741991043091
+          },
+          {
+            "sentence": "A girl is applying makeup on her face.",
+            "cosine": 0.9462933540344238
+          },
+          {
+            "sentence": "The woman is styling her hair.",
+            "cosine": 0.936583399772644
+          },
+          {
+            "sentence": "A woman is braiding her hair.",
+            "cosine": 0.935314953327179
+          },
+          {
+            "sentence": "A girl is putting on eye makeup.",
+            "cosine": 0.9326372146606445
+          }
+        ],
+        "I don't think it makes any tremendous difference.": [
+          {
+            "sentence": "I don't think it makes much difference.",
+            "cosine": 0.9551149010658264
+          },
+          {
+            "sentence": "I don't think there are any benefits.",
+            "cosine": 0.8766206502914429
+          },
+          {
+            "sentence": "I don't think that there's any.",
+            "cosine": 0.8661479949951172
+          },
+          {
+            "sentence": "I don't think there is any universal term.",
+            "cosine": 0.8104573488235474
+          },
+          {
+            "sentence": "It makes absolutely NO difference.",
+            "cosine": 0.8063572645187378
+          }
+        ]
+      },
+      "failures": {
+        "false_friend": {
+          "sentence1": "A man is riding a motorcycle.",
+          "sentence2": "A woman is riding a horse.",
+          "gold": 0.75,
+          "cosine": 0.9446955919265747,
+          "why": "Gold score is below 1, but this pair has the highest cosine in that bin."
+        },
+        "missed_paraphrase": {
+          "sentence1": "But Odette is the first to form over the Caribbean Sea in December, the Center said.",
+          "sentence2": "It is the first named storm to develop in the Caribbean in December.",
+          "gold": 4.2,
+          "cosine": 0.613072395324707,
+          "why": "Gold score is at least 4, but this pair has the lowest cosine in that bin."
+        }
+      }
+    },
+    "SBERT-2019": {
+      "metrics": {
+        "spearman": 76.98512209134716,
+        "alignment": 0.1797693371772766,
+        "uniformity": -3.064653158187866,
+        "n_pairs": 1379,
+        "n_positive_pairs": 338,
+        "n_uniformity_sentences": 2552
+      },
+      "neighbors": {
+        "A girl is styling her hair.": [
+          {
+            "sentence": "The woman is styling her hair.",
+            "cosine": 0.9929284453392029
+          },
+          {
+            "sentence": "A woman is braiding her hair.",
+            "cosine": 0.9223322868347168
+          },
+          {
+            "sentence": "A girl is brushing her hair.",
+            "cosine": 0.9149025082588196
+          },
+          {
+            "sentence": "A girl is applying makeup on her face.",
+            "cosine": 0.8609427213668823
+          },
+          {
+            "sentence": "A woman is putting on makeup.",
+            "cosine": 0.8590667247772217
+          }
+        ],
+        "I don't think it makes any tremendous difference.": [
+          {
+            "sentence": "I don't think it makes much difference.",
+            "cosine": 0.9786376953125
+          },
+          {
+            "sentence": "I don't think there are any benefits.",
+            "cosine": 0.9486007690429688
+          },
+          {
+            "sentence": "There's not a lot you can do about that.",
+            "cosine": 0.9107035994529724
+          },
+          {
+            "sentence": "I don't think that there's any.",
+            "cosine": 0.9056862592697144
+          },
+          {
+            "sentence": "I really do not think there is much you can do about that.",
+            "cosine": 0.9010323882102966
+          }
+        ]
+      },
+      "failures": {
+        "false_friend": {
+          "sentence1": "You don't need any visa.",
+          "sentence2": "You don't need sauce at all.",
+          "gold": 0.0,
+          "cosine": 0.9403828978538513,
+          "why": "Gold score is below 1, but this pair has the highest cosine in that bin."
+        },
+        "missed_paraphrase": {
+          "sentence1": "Defiant Mugabe sworn in for seventh term blasts 'vile' West",
+          "sentence2": "Mugabe sworn in for another term",
+          "gold": 4.0,
+          "cosine": 0.49420732259750366,
+          "why": "Gold score is at least 4, but this pair has the lowest cosine in that bin."
+        }
+      }
+    },
+    "unsup (cls_before_pooler)": {
+      "metrics": {
+        "spearman": 69.56246353685135,
+        "alignment": 0.2279043048620224,
+        "uniformity": -2.502563714981079,
+        "n_pairs": 1379,
+        "n_positive_pairs": 338,
+        "n_uniformity_sentences": 2552
+      },
+      "neighbors": {
+        "A girl is styling her hair.": [
+          {
+            "sentence": "The woman is styling her hair.",
+            "cosine": 0.900646448135376
+          },
+          {
+            "sentence": "A girl is brushing her hair.",
+            "cosine": 0.8926261067390442
+          },
+          {
+            "sentence": "A girl is putting on eye makeup.",
+            "cosine": 0.8100278973579407
+          },
+          {
+            "sentence": "A girl is applying makeup on her face.",
+            "cosine": 0.805422306060791
+          },
+          {
+            "sentence": "A young Asian girl is applying eyeliner.",
+            "cosine": 0.758625328540802
+          }
+        ],
+        "I don't think it makes any tremendous difference.": [
+          {
+            "sentence": "I don't think it makes much difference.",
+            "cosine": 0.9300894737243652
+          },
+          {
+            "sentence": "It makes absolutely NO difference.",
+            "cosine": 0.830545961856842
+          },
+          {
+            "sentence": "No, it makes no difference.",
+            "cosine": 0.809468150138855
+          },
+          {
+            "sentence": "It really doesn't matter.",
+            "cosine": 0.7817763686180115
+          },
+          {
+            "sentence": "I don't see why there should be any problem with this whatsoever.",
+            "cosine": 0.7787206768989563
+          }
+        ]
+      },
+      "failures": {
+        "false_friend": {
+          "sentence1": "Gunmen kill nine people in northwest Pakistan",
+          "sentence2": "Gunmen kill 3 policemen in Iraq",
+          "gold": 0.4,
+          "cosine": 0.9381755590438843,
+          "why": "Gold score is below 1, but this pair has the highest cosine in that bin."
+        },
+        "missed_paraphrase": {
+          "sentence1": "But Odette is the first to form over the Caribbean Sea in December, the Center said.",
+          "sentence2": "It is the first named storm to develop in the Caribbean in December.",
+          "gold": 4.2,
+          "cosine": 0.5605243444442749,
+          "why": "Gold score is at least 4, but this pair has the lowest cosine in that bin."
+        }
+      }
+    },
+    "sup (cls)": {
+      "metrics": {
+        "spearman": 74.73372610133005,
+        "alignment": 0.13581092655658722,
+        "uniformity": -2.472869873046875,
+        "n_pairs": 1379,
+        "n_positive_pairs": 338,
+        "n_uniformity_sentences": 2552
+      },
+      "neighbors": {
+        "A girl is styling her hair.": [
+          {
+            "sentence": "A girl is brushing her hair.",
+            "cosine": 0.9450395703315735
+          },
+          {
+            "sentence": "The woman is styling her hair.",
+            "cosine": 0.8413257002830505
+          },
+          {
+            "sentence": "A young Asian girl is applying eyeliner.",
+            "cosine": 0.8097926378250122
+          },
+          {
+            "sentence": "A girl is applying makeup on her face.",
+            "cosine": 0.7965006828308105
+          },
+          {
+            "sentence": "A girl is putting on eye makeup.",
+            "cosine": 0.7629616856575012
+          }
+        ],
+        "I don't think it makes any tremendous difference.": [
+          {
+            "sentence": "I don't think it makes much difference.",
+            "cosine": 0.9649907946586609
+          },
+          {
+            "sentence": "I don't think there are any benefits.",
+            "cosine": 0.9115299582481384
+          },
+          {
+            "sentence": "It really doesn't matter.",
+            "cosine": 0.895926833152771
+          },
+          {
+            "sentence": "I don't see why this could be a problem.",
+            "cosine": 0.8949821591377258
+          },
+          {
+            "sentence": "No, it makes no difference.",
+            "cosine": 0.8921939134597778
+          }
+        ]
+      },
+      "failures": {
+        "false_friend": {
+          "sentence1": "Gunmen kill nine people in northwest Pakistan",
+          "sentence2": "Gunmen kill 3 policemen in Iraq",
+          "gold": 0.4,
+          "cosine": 0.9592917561531067,
+          "why": "Gold score is below 1, but this pair has the highest cosine in that bin."
+        },
+        "missed_paraphrase": {
+          "sentence1": "According to SunnComm's Peter Jacobs, \"MediaMax performs exactly as 'advertised' to the companies who purchased it.",
+          "sentence2": "\"MediaMax performs EXACTLY as \"advertised\" to the companies who purchased it,\" Jacobs said in the statement.",
+          "gold": 4.2,
+          "cosine": 0.4529072046279907,
+          "why": "Gold score is at least 4, but this pair has the lowest cosine in that bin."
+        }
+      }
+    }
+  }
+}

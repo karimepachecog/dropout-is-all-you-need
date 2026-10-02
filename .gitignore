@@ -16,8 +16,13 @@ venv/
 .DS_Store
 .ipynb_checkpoints/
 
-# Training artifacts
-runs/
+# Training artifacts. Checkpoints stay local; the log and the plots are part of the delivery.
+runs/*
+!runs/log.csv
+!runs/ablation_summary.json
+!runs/reference_eval.json
+!runs/analysis/
+!runs/analysis/**
 exported_models/
 *.safetensors
 *.pt

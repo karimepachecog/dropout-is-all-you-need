@@ -1,0 +1,13 @@
+run_name,mode,seed,batch_size,lr,tau,epochs,max_len,dropout,hard_negatives,same_dropout,data_fraction,n_examples,best_dev_spearman,best_step,test_spearman,alignment,uniformity,hardware,torch_version,elapsed_sec
+unsupervised_s42_bs64_lr3e-05_tau0.05_frac1_samedrop0_hardneg0,unsupervised,42,64,3e-05,0.05,1,32,0.1,False,False,1.0,165529,75.9387778470073,2000,67.2853,0.2289,-2.4229,cuda:Tesla T4 (14.6 GB),2.11.0+cu130,589.5
+unsupervised_s43_bs64_lr3e-05_tau0.05_frac1_samedrop0_hardneg0,unsupervised,43,64,3e-05,0.05,1,32,0.1,False,False,1.0,165529,77.49070083546393,1750,69.5625,0.2279,-2.5026,cuda:Tesla T4 (14.6 GB),2.11.0+cu130,597.5
+unsupervised_s44_bs64_lr3e-05_tau0.05_frac1_samedrop0_hardneg0,unsupervised,44,64,3e-05,0.05,1,32,0.1,False,False,1.0,165529,76.0387904556281,2000,,,,cuda:Tesla T4 (14.6 GB),2.11.0+cu130,625.4
+supervised_s42_bs128_lr5e-05_tau0.05_frac1_samedrop0_hardneg1,supervised,42,128,5e-05,0.05,3,32,0.1,True,False,1.0,33351,78.03973124609854,500,74.7337,0.1358,-2.4729,cuda:Tesla T4 (14.6 GB),2.11.0+cu130,383.5
+supervised_s43_bs128_lr5e-05_tau0.05_frac1_samedrop0_hardneg1,supervised,43,128,5e-05,0.05,3,32,0.1,True,False,1.0,33351,77.45266068904034,500,,,,cuda:Tesla T4 (14.6 GB),2.11.0+cu130,395.4
+supervised_s44_bs128_lr5e-05_tau0.05_frac1_samedrop0_hardneg1,supervised,44,128,5e-05,0.05,3,32,0.1,True,False,1.0,33351,77.62047708683428,750,,,,cuda:Tesla T4 (14.6 GB),2.11.0+cu130,390.3
+unsupervised_s42_bs64_lr3e-05_tau0.05_frac1_samedrop1_hardneg0,unsupervised,42,64,3e-05,0.05,1,32,0.1,False,True,1.0,165529,65.48887484911334,2000,56.2719,0.4319,-2.8579,cuda:Tesla T4 (14.6 GB),2.11.0+cu130,435.4
+supervised_s42_bs128_lr5e-05_tau0.05_frac1_samedrop0_hardneg0,supervised,42,128,5e-05,0.05,3,32,0.1,False,False,1.0,33351,77.03075259223567,500,73.7409,0.1296,-2.4682,cuda:Tesla T4 (14.6 GB),2.11.0+cu130,293.1
+unsupervised_s42_bs64_lr3e-05_tau0.05_frac0.25_samedrop0_hardneg0,unsupervised,42,64,3e-05,0.05,1,32,0.1,False,False,0.25,41382,74.88748494823285,500,,,,cuda:Tesla T4 (14.6 GB),2.11.0+cu130,159.3
+supervised_s42_bs128_lr5e-05_tau0.05_frac0.25_samedrop0_hardneg1,supervised,42,128,5e-05,0.05,3,32,0.1,True,False,0.25,8337,73.56718207197723,195,,,,cuda:Tesla T4 (14.6 GB),2.11.0+cu130,101.3
+unsupervised_s42_bs64_lr3e-05_tau0.05_frac0.5_samedrop0_hardneg0,unsupervised,42,64,3e-05,0.05,1,32,0.1,False,False,0.5,82764,75.88815623488499,1000,,,,cuda:Tesla T4 (14.6 GB),2.11.0+cu130,304.1
+supervised_s42_bs128_lr5e-05_tau0.05_frac0.5_samedrop0_hardneg1,supervised,42,128,5e-05,0.05,3,32,0.1,True,False,0.5,16675,76.29345315601778,250,,,,cuda:Tesla T4 (14.6 GB),2.11.0+cu130,193.0

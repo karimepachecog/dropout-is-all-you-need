@@ -1,0 +1,77 @@
+{
+  "bert-base-uncased-mean": {
+    "model": "bert-base-uncased",
+    "kind": "transformer",
+    "pool": "mean",
+    "max_length": 128,
+    "splits": {
+      "validation": {
+        "spearman": 59.31207344588676,
+        "alignment": 0.19483469426631927,
+        "uniformity": -1.6496703624725342,
+        "n_pairs": 1500,
+        "n_positive_pairs": 264,
+        "n_uniformity_sentences": 2910,
+        "split": "validation"
+      },
+      "test": {
+        "spearman": 47.28974611520108,
+        "alignment": 0.21554061770439148,
+        "uniformity": -1.614965558052063,
+        "n_pairs": 1379,
+        "n_positive_pairs": 338,
+        "n_uniformity_sentences": 2552,
+        "split": "test"
+      }
+    }
+  },
+  "sbert-2019": {
+    "model": "sentence-transformers/bert-base-nli-mean-tokens",
+    "kind": "sbert",
+    "pool": "mean",
+    "max_length": 128,
+    "splits": {
+      "validation": {
+        "spearman": 80.77409330820251,
+        "alignment": 0.1928759217262268,
+        "uniformity": -3.0486958026885986,
+        "n_pairs": 1500,
+        "n_positive_pairs": 264,
+        "n_uniformity_sentences": 2910,
+        "split": "validation"
+      },
+      "test": {
+        "spearman": 76.98511189763691,
+        "alignment": 0.1797693520784378,
+        "uniformity": -3.064653158187866,
+        "n_pairs": 1379,
+        "n_positive_pairs": 338,
+        "n_uniformity_sentences": 2552,
+        "split": "test"
+      }
+    }
+  },
+  "ok": true,
+  "deltas": {
+    "bert-base-uncased-mean:validation": {
+      "got": 59.31207344588676,
+      "expected": 59.31,
+      "delta": 0.002073445886757952
+    },
+    "bert-base-uncased-mean:test": {
+      "got": 47.28974611520108,
+      "expected": 47.29,
+      "delta": -0.0002538847989157489
+    },
+    "sbert-2019:validation": {
+      "got": 80.77409330820251,
+      "expected": 80.77,
+      "delta": 0.004093308202513413
+    },
+    "sbert-2019:test": {
+      "got": 76.98511189763691,
+      "expected": 76.98,
+      "delta": 0.005111897636908225
+    }
+  }
+}

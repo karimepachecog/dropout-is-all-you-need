@@ -98,7 +98,7 @@ python export_and_push.py \
 | `data/snli_train_100k.jsonl` | the shared training file |
 | `colab_runner.ipynb` | the same protocol on Colab |
 
-`runs/` and exported weights stay on the machine that trained them. They are listed in `.gitignore` because a BERT checkpoint is larger than GitHub's file limit.
+Checkpoints in `runs/<run>/best` and exported weights stay on the machine that trained them. A BERT checkpoint is larger than GitHub's file limit. The run log, the ablation summary, and the plots in `runs/analysis/` are in the repo.
 
 ## Citation
 

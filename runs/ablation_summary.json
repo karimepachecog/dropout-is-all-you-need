@@ -1,0 +1,96 @@
+{
+  "modes": {
+    "unsupervised": {
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "dev": [
+        75.9387778470073,
+        77.49070083546393,
+        76.0387904556281
+      ],
+      "dev_mean": 76.48942304603311,
+      "dev_std": 0.8685727022974993,
+      "runs": [
+        "unsupervised_s42_bs64_lr3e-05_tau0.05_frac1_samedrop0_hardneg0",
+        "unsupervised_s43_bs64_lr3e-05_tau0.05_frac1_samedrop0_hardneg0",
+        "unsupervised_s44_bs64_lr3e-05_tau0.05_frac1_samedrop0_hardneg0"
+      ]
+    },
+    "supervised": {
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "dev": [
+        78.03973124609854,
+        77.45266068904034,
+        77.62047708683428
+      ],
+      "dev_mean": 77.70428967399106,
+      "dev_std": 0.30237620949008065,
+      "runs": [
+        "supervised_s42_bs128_lr5e-05_tau0.05_frac1_samedrop0_hardneg1",
+        "supervised_s43_bs128_lr5e-05_tau0.05_frac1_samedrop0_hardneg1",
+        "supervised_s44_bs128_lr5e-05_tau0.05_frac1_samedrop0_hardneg1"
+      ]
+    }
+  },
+  "ablations": [
+    {
+      "base": "unsupervised_s42_bs64_lr3e-05_tau0.05_frac1_samedrop0_hardneg0",
+      "ablation": "unsupervised_s42_bs64_lr3e-05_tau0.05_frac1_samedrop1_hardneg0",
+      "base_dev": 75.9387778470073,
+      "ablation_dev": 65.48887484911334,
+      "dev_delta": -10.449902997893957,
+      "base_test": 67.2853,
+      "ablation_test": 56.2719,
+      "test_delta": -11.013400000000004,
+      "seed_dev_std": 0.8685727022974993,
+      "larger_than_seed_noise": true,
+      "name": "unsupervised same dropout mask"
+    },
+    {
+      "base": "supervised_s42_bs128_lr5e-05_tau0.05_frac1_samedrop0_hardneg1",
+      "ablation": "supervised_s42_bs128_lr5e-05_tau0.05_frac1_samedrop0_hardneg0",
+      "base_dev": 78.03973124609854,
+      "ablation_dev": 77.03075259223567,
+      "dev_delta": -1.0089786538628687,
+      "base_test": 74.7337,
+      "ablation_test": 73.7409,
+      "test_delta": -0.9928000000000026,
+      "seed_dev_std": 0.30237620949008065,
+      "larger_than_seed_noise": true,
+      "name": "supervised hard negatives off"
+    }
+  ],
+  "data_fractions": [
+    {
+      "mode": "unsupervised",
+      "fraction": 0.25,
+      "dev": 74.88748494823285,
+      "run": "unsupervised_s42_bs64_lr3e-05_tau0.05_frac0.25_samedrop0_hardneg0"
+    },
+    {
+      "mode": "supervised",
+      "fraction": 0.25,
+      "dev": 73.56718207197723,
+      "run": "supervised_s42_bs128_lr5e-05_tau0.05_frac0.25_samedrop0_hardneg1"
+    },
+    {
+      "mode": "unsupervised",
+      "fraction": 0.5,
+      "dev": 75.88815623488499,
+      "run": "unsupervised_s42_bs64_lr3e-05_tau0.05_frac0.5_samedrop0_hardneg0"
+    },
+    {
+      "mode": "supervised",
+      "fraction": 0.5,
+      "dev": 76.29345315601778,
+      "run": "supervised_s42_bs128_lr5e-05_tau0.05_frac0.5_samedrop0_hardneg1"
+    }
+  ]
+}
