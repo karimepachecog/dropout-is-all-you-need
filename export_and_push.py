@@ -59,6 +59,17 @@ def sbert_spearman(model, split: str, batch_size: int) -> float:
     return spearman(pair_cosine(left, right), scores)
 
 
+def batch_limitation(meta: dict) -> str:
+    """Unsupervised BERT-base uses batch 64 in the paper. Supervised uses 512."""
+    batch = meta.get("batch_size")
+    if meta.get("mode") == "unsupervised":
+        return f"The unsupervised batch size is {batch}, the same as the paper's BERT-base setting."
+    return (
+        f"The supervised batch size is {batch}, not the paper's 512, "
+        "and the learning rate was not retuned for that."
+    )
+
+
 def write_model_card(directory: Path, meta: dict, metrics: dict, repo_id: str | None) -> None:
     card = f"""---
 language: en
@@ -66,7 +77,11 @@ license: apache-2.0
 tags:
   - sentence-transformers
   - sentence-similarity
+  - feature-extraction
+  - dense
   - simcse
+pipeline_tag: sentence-similarity
+library_name: sentence-transformers
 datasets:
   - stanfordnlp/snli
 base_model: bert-base-uncased
@@ -121,7 +136,7 @@ Uniformity (STS-B test, t=2): {metrics.get("uniformity")}
 - English only, and the encoder is uncased.
 - Trained on SNLI captions, which are shorter and more concrete than the Wikipedia sentences used for unsupervised SimCSE in the paper.
 - The supervised set is about an order of magnitude smaller than SNLI+MNLI, and most pairs have no contradiction hard negative.
-- The supervised batch size is {meta.get("batch_size")}, not the paper's 512, and the learning rate was not retuned for that.
+- {batch_limitation(meta)}
 - Not a substitute for the published SimCSE checkpoints if you need the paper's STS-B numbers.
 """
     (directory / "README.md").write_text(card)
@@ -174,8 +189,15 @@ def main() -> None:
     api = HfApi()
     user = api.whoami()["name"]
     repo_id = args.repo_id or f"{user}/simcse-{args.mode}-snli100k"
-    write_model_card(args.out, meta, metrics, repo_id)
     reloaded.push_to_hub(repo_id, exist_ok=True)
+    # push_to_hub replaces README.md with the library's empty card.
+    write_model_card(args.out, meta, metrics, repo_id)
+    api.upload_file(
+        path_or_fileobj=str(args.out / "README.md"),
+        path_in_repo="README.md",
+        repo_id=repo_id,
+        commit_message="Restore the SimCSE model card",
+    )
     from_hub = SentenceTransformer(repo_id)
     hub_score = sbert_spearman(from_hub, args.split, args.batch_size)
     print(f"hub reload {hub_score:.4f} (local {local_score:.4f})")
